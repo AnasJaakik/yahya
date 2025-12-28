@@ -1,0 +1,229 @@
+.services-hero {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-medium) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 120px 0;
+}
+
+.services-hero h1 {
+  color: var(--white);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.lead-text {
+  font-size: 1.3rem;
+  color: var(--blue-very-light);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.packs {
+  background: var(--white);
+}
+
+.packs h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.packs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pack-card {
+  background: var(--white);
+  border: 2px solid var(--blue-very-light);
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pack-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pack-card.featured {
+  border-color: var(--orange-accent);
+  border-width: 3px;
+  transform: scale(1.05);
+}
+
+.pack-badge {
+  position: absolute;
+  top: -15px;
+  right: 30px;
+  background: var(--orange-accent);
+  color: var(--white);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.pack-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--blue-very-light);
+}
+
+.pack-header h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--blue-dark);
+}
+
+.pack-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--blue-medium);
+}
+
+.pack-description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.pack-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.pack-features li {
+  padding: 0.75rem 0;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--blue-very-light);
+}
+
+.pack-features li:last-child {
+  border-bottom: none;
+}
+
+.pack-content .btn {
+  width: 100%;
+}
+
+.methodology {
+  background: linear-gradient(135deg, var(--blue-very-light) 0%, var(--white) 100%);
+}
+
+.methodology h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.methodology-item {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.methodology-item:hover {
+  transform: translateY(-5px);
+}
+
+.methodology-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.methodology-item h3 {
+  color: var(--blue-dark);
+  margin-bottom: 1rem;
+}
+
+.methodology-item p {
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.subjects {
+  background: var(--white);
+}
+
+.subjects h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.subject-card {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-medium) 100%);
+  color: var(--white);
+  padding: 2.5rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.subject-card:hover {
+  transform: translateY(-5px);
+}
+
+.subject-card h3 {
+  color: var(--white);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.subject-level {
+  color: var(--blue-very-light);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.subject-card ul {
+  list-style: none;
+}
+
+.subject-card ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.subject-card ul li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .services-hero h1 {
+    font-size: 2rem;
+  }
+
+  .packs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pack-card.featured {
+    transform: scale(1);
+  }
+
+  .methodology-grid,
+  .subjects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

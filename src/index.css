@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --blue-dark: #054A91;
+  --blue-medium: #3E7CB1;
+  --blue-light: #81A4CD;
+  --blue-very-light: #DBE4EE;
+  --orange-accent: #F17300;
+  --white: #FFFFFF;
+  --text-dark: #1a1a1a;
+  --text-light: #666666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--blue-dark);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-medium) 100%);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(5, 74, 145, 0.3);
+}
+
+.btn-accent {
+  background: var(--orange-accent);
+  color: var(--white);
+}
+
+.btn-accent:hover {
+  background: #d86200;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(241, 115, 0, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--blue-dark);
+  color: var(--blue-dark);
+}
+
+.btn-outline:hover {
+  background: var(--blue-dark);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+}

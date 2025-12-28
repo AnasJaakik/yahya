@@ -1,0 +1,151 @@
+.team-hero {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-medium) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 120px 0;
+}
+
+.team-hero h1 {
+  color: var(--white);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.lead-text {
+  font-size: 1.3rem;
+  color: var(--blue-very-light);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tutors {
+  background: var(--white);
+}
+
+.tutors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.tutor-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.tutor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.tutor-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--blue-light) 0%, var(--blue-very-light) 100%);
+}
+
+.tutor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tutor-info {
+  padding: 2rem;
+}
+
+.tutor-info h3 {
+  color: var(--blue-dark);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tutor-specialty {
+  color: var(--orange-accent);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.tutor-bio {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  min-height: 80px;
+}
+
+.tutor-info .btn {
+  width: 100%;
+}
+
+.selection-process {
+  background: linear-gradient(135deg, var(--blue-very-light) 0%, var(--white) 100%);
+}
+
+.selection-process h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.process-step {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-medium) 100%);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1.5rem;
+}
+
+.process-step h3 {
+  color: var(--blue-dark);
+  margin-bottom: 1rem;
+}
+
+.process-step p {
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .team-hero h1 {
+    font-size: 2rem;
+  }
+
+  .tutors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
