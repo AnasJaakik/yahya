@@ -1,8 +1,10 @@
 .about-hero {
-  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-medium) 100%);
+  background: linear-gradient(135deg, rgba(5, 74, 145, 0.98) 0%, rgba(62, 124, 177, 0.98) 100%);
   color: var(--white);
   text-align: center;
   padding: 120px 0;
+  position: relative;
+  z-index: 1;
 }
 
 .about-hero h1 {

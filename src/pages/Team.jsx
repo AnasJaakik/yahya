@@ -17,21 +17,21 @@ const Team = () => {
     {
       id: 2,
       name: 'Aymen',
-      specialty: 'Mathématiques',
+      specialty: 'Mathématiques & informatique',
       bio: 'Passionné de mathématiques, j\'aide les élèves à surmonter leurs difficultés avec des méthodes pédagogiques innovantes.',
       image: aymen
     },
     {
       id: 3,
       name: 'Nea',
-      specialty: 'Physique-Chimie',
+      specialty: 'Mathématiques & Physique',
       bio: 'Spécialiste en sciences physiques, je rends les concepts complexes accessibles grâce à des explications claires et des exemples concrets.',
       image: nea
     },
     {
       id: 4,
       name: 'Jules',
-      specialty: 'Mathématiques & Sciences',
+      specialty: 'Mathématiques & Physique',
       bio: 'Tuteur expérimenté en mathématiques et sciences, je m\'adapte à chaque élève pour maximiser son potentiel.',
       image: ju
     }

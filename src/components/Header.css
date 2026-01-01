@@ -1,20 +1,40 @@
 .header {
   background: var(--white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.header .container {
+  padding-left: 0;
+  padding-right: 20px;
 }
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 1rem 0;
+  gap: 3rem;
+  margin-left: -10px;
+}
+
+.logo {
+  margin-right: 2rem;
+  margin-left: 0;
+  flex-shrink: 0;
 }
 
 .logo img {
-  height: 50px;
+  height: 70px;
   width: auto;
 }
 
@@ -23,6 +43,7 @@
   list-style: none;
   gap: 2rem;
   align-items: center;
+  margin-left: auto;
 }
 
 .nav-links a {

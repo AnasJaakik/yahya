@@ -1,16 +1,139 @@
+import { useEffect, useState, useMemo } from "react";
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from "framer-motion";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim"; 
+import mainImage from '../assets/main.png';
 import './Home.css';
 
 const Home = () => {
+  const [init, setInit] = useState(false);
+  const [index, setIndex] = useState(0);
+
+  const phrases = [
+    "engagés pour la réussite scolaire.",
+    "un tutorat humain et structuré.",
+    "des progrès visibles, séance après séance.",
+    "des tuteurs qui font la différence.",
+    "l'éducation, prise au sérieux."
+  ];
+
+  // Particle Engine Initialization
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  // Text Rotation Logic
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % phrases.length);
+    }, 3500); // Change phrase every 3.5 seconds
+    return () => clearInterval(timer);
+  }, [phrases.length]);
+
+  const particlesOptions = useMemo(() => ({
+    fullScreen: { enable: false },
+    fpsLimit: 120,
+    interactivity: {
+      events: {
+        onHover: {
+          enable: true,
+          mode: "bubble",
+        },
+      },
+      modes: {
+        bubble: {
+          distance: 200,
+          size: 25,
+          duration: 2,
+          opacity: 0.8,
+        },
+      },
+    },
+    particles: {
+      color: { value: "#ffffff" },
+      shape: {
+        type: "char",
+        options: {
+          char: [
+            { value: "∫", weight: "400" },
+            { value: "Σ", weight: "400" },
+            { value: "π", weight: "400" },
+            { value: "∞", weight: "400" },
+            { value: "√", weight: "400" },
+            { value: "Δ", weight: "400" },
+            { value: "ln", weight: "400" },
+            { value: "eˣ", weight: "400" },
+            { value: "dy/dx", weight: "400" }
+          ],
+          font: "serif",
+          style: "italic"
+        }
+      },
+      opacity: {
+        value: { min: 0.1, max: 0.5 },
+      },
+      size: {
+        value: { min: 10, max: 20 },
+      },
+      links: {
+        enable: true,
+        distance: 150,
+        color: "#ffffff",
+        opacity: 0.2,
+        width: 1,
+      },
+      move: {
+        enable: true,
+        speed: 0.8,
+        direction: "none",
+        outModes: { default: "out" },
+      },
+      number: {
+        density: { enable: true, area: 800 },
+        value: 50,
+      },
+    },
+    detectRetina: true,
+  }), []);
+
   return (
     <div className="home">
-      {/* Section Héros */}
       <section className="hero">
+        {init && (
+          <Particles
+            id="tsparticles"
+            className="hero-particles"
+            options={particlesOptions}
+          />
+        )}
         <div className="container">
           <div className="hero-content">
             <div className="hero-text">
-              <h1>Visez plus haut avec Étudium</h1>
-              <p className="hero-subtitle">Cours particuliers expertisés – Maths, Physique & Sciences</p>
+              <h1>L'excellence académique commence par un bon accompagnement</h1>
+              
+              <div className="hero-subtitle">
+                <span className="static-text">Nous sommes </span>
+                <div className="rotating-wrapper">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={index}
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -15 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                      className="dynamic-text"
+                    >
+                      {phrases[index]}
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
+              </div>
+
               <p className="hero-description">
                 Depuis 2025, Étudium connecte élèves et tuteurs passionnés, experts en sciences, 
                 pour retrouver le goût de la réussite.
@@ -20,15 +143,12 @@ const Home = () => {
               </Link>
             </div>
             <div className="hero-image">
-              <div className="hero-placeholder">
-                <span>Binôme élève–tuteur</span>
-              </div>
+              <img src={mainImage} alt="Binôme élève–tuteur" className="hero-main-image" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section C'est quoi Étudium */}
       <section className="about-preview section">
         <div className="container">
           <h2>C'est quoi Étudium ?</h2>
@@ -38,7 +158,6 @@ const Home = () => {
               pour retrouver le goût de la réussite. Face aux réformes scolaires et au manque de soutien, 
               nous proposons un accompagnement sur-mesure, en ligne ou en présentiel.
             </p>
-            
             <div className="values-grid">
               <div className="value-card">
                 <div className="value-icon">🎯</div>
@@ -65,7 +184,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Section Aperçu des services */}
       <section className="services-preview section">
         <div className="container">
           <h2>Nos expertises pédagogiques</h2>
@@ -99,7 +217,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Formulaire de consultation */}
       <section className="consultation-form section">
         <div className="container">
           <div className="form-container">
