@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import yahya from '../assets/yahya.png';
 import aymen from '../assets/aymen.png';
 import nea from '../assets/nea.png';
@@ -60,9 +59,6 @@ const Team = () => {
                   <h3>{tutor.name}</h3>
                   <p className="tutor-specialty">{tutor.specialty}</p>
                   <p className="tutor-bio">{tutor.bio}</p>
-                  <Link to="/contact" className="btn btn-primary">
-                    Contacter ce tuteur
-                  </Link>
                 </div>
               </div>
             ))}
