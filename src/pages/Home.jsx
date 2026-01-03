@@ -142,7 +142,7 @@ const Home = () => {
             <div className="benefit-card no-justify">
               <h3>Un tutorat individuel selon vos horaires</h3>
               <p>Chaque séance se déroule en tête-à-tête avec le tuteur, en ligne ou en présentiel</p>
-              <div className="card-decoration-bottom">✨</div>
+              
             </div>
           </div>
         </div>

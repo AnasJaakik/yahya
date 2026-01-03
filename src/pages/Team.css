@@ -41,12 +41,19 @@
 
 .tutors-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px;
   max-width: 1800px;
   margin: 0 auto;
   width: 100%;
   padding: 0 20px;
+}
+
+@media (max-width: 1400px) {
+  .tutors-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
 }
 
 .tutor-card {
@@ -191,10 +198,8 @@
     padding: 0 20px;
   }
   
-  @media (max-width: 600px) {
-    .tutors-grid {
-      grid-template-columns: 1fr;
-    }
+  .tutor-card {
+    max-width: none;
   }
   
   .tutor-card {
@@ -234,6 +239,13 @@
   }
 }
 
+@media (max-width: 600px) {
+  .tutors-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 @media (max-width: 480px) {
   .team-hero h1 {
     font-size: 1.5rem;
@@ -241,6 +253,14 @@
   
   .selection-process h2 {
     font-size: 1.5rem;
+  }
+  
+  .tutor-image {
+    height: 250px;
+  }
+  
+  .tutor-info {
+    padding: 1.25rem;
   }
 }
 

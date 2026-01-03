@@ -51,7 +51,7 @@ const Testimonials = () => {
 
   const currentTestimonial = testimonials[currentIndex];
 
-  const averageRating = 4.8;
+  const averageRating = 4.9;
 
   return (
     <div className="testimonials-page">

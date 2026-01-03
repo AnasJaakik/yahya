@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <h3>Étudium</h3>
-            <p>Depuis 2023, Étudium accompagne les élèves dans leur progression scolaire, avec un suivi personnalisé, humain et adapté à chaque parcours.</p>
+            <p>Depuis 2023, Étudium accompagne les élèves dans leur progression scolaire, avec un suivi personnalisé, adapté à chaque parcours.</p>
           </div>
           
           <div className="footer-section">

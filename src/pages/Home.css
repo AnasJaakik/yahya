@@ -248,7 +248,8 @@
   }
   
   .hero-text {
-    text-align: center;
+    text-align: left;
+    align-items: flex-start;
   }
   
   .hero-text h1 {
@@ -258,7 +259,7 @@
   
   .hero-subtitle {
     font-size: 1.1rem;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
   
@@ -331,17 +332,26 @@
     padding: 0 20px;
   }
   
-  .form-container h2 {
-    font-size: 1.8rem;
+  .form-wrapper {
     padding: 1.5rem;
+    margin-top: 30px;
+    border-radius: 16px;
   }
   
-  .form-container p {
-    padding: 1.25rem 1.5rem;
+  .form-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .form-header p {
+    font-size: 0.95rem;
   }
   
   .consultation-form-content {
-    padding: 30px 20px;
+    padding: 0;
   }
   
   .form-row { 
@@ -374,6 +384,15 @@
   
   .stat-card {
     padding: 25px 15px;
+  }
+  
+  .form-wrapper {
+    padding: 1.25rem;
+    margin-top: 20px;
+  }
+  
+  .form-header h2 {
+    font-size: 1.3rem;
   }
 }
 

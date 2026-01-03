@@ -25,7 +25,7 @@ const Team = () => {
       id: 3,
       name: 'Nea',
       specialty: 'Mathématiques & Physique',
-      bio: 'Étudiant en génie mécanique',
+      bio: 'Étudiante en génie mécanique',
       image: nea
     },
     {
