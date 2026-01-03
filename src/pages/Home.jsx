@@ -100,7 +100,7 @@ const Home = () => {
               <div className="stat-icon">🎓</div>
               <div className="stat-text-wrapper">
                 <h3>50+ étudiants accompagnés</h3>
-                <p>Notre équipe a soutenu plusieurs dizaines d'étudiants dans leur parcours scolaire, en les aidant à consolider leurs bases et à viser l'excellence académique.</p>
+                <p>Notre équipe accompagne des dizaines d’élèves dans leur parcours scolaire, en les aidant à consolider leurs bases et à progresser avec méthode et confiance.</p>
               </div>
             </div>
             <div className="stat-card">
@@ -114,7 +114,7 @@ const Home = () => {
               <div className="stat-icon">📘</div>
               <div className="stat-text-wrapper">
                 <h3>Secondaire • Cégep • Université</h3>
-                <p>Nous accompagnons des élèves à tous les niveaux, incluant le système québécois et le système français, avec une approche adaptée à chaque parcours.</p>
+                <p>Nous accompagnons des élèves à tous les niveaux, dans le système québécois comme dans le système français, avec un suivi adapté à chaque parcours.</p>
               </div>
             </div>
           </div>
