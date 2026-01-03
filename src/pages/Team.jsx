@@ -2,6 +2,7 @@ import yahya from '../assets/yahya.png';
 import aymen from '../assets/aymen.png';
 import nea from '../assets/nea.png';
 import ju from '../assets/ju.png';
+import edmondo from '../assets/edmondo.png';
 import './Team.css';
 
 const Team = () => {
@@ -10,29 +11,36 @@ const Team = () => {
       id: 1,
       name: 'Yahya',
       specialty: 'Mathématiques & Physique',
-      bio: 'Expert en mathématiques et physique avec plus de 5 ans d\'expérience. Spécialisé dans la préparation aux examens et concours.',
+      bio: 'Étudiant en génie aérospatial',
       image: yahya
     },
     {
       id: 2,
       name: 'Aymen',
       specialty: 'Mathématiques & informatique',
-      bio: 'Passionné de mathématiques, j\'aide les élèves à surmonter leurs difficultés avec des méthodes pédagogiques innovantes.',
+      bio: 'Étudiant en génie logiciel',
       image: aymen
     },
     {
       id: 3,
       name: 'Nea',
       specialty: 'Mathématiques & Physique',
-      bio: 'Spécialiste en sciences physiques, je rends les concepts complexes accessibles grâce à des explications claires et des exemples concrets.',
+      bio: 'Étudiant en génie mécanique',
       image: nea
     },
     {
       id: 4,
       name: 'Jules',
       specialty: 'Mathématiques & Physique',
-      bio: 'Tuteur expérimenté en mathématiques et sciences, je m\'adapte à chaque élève pour maximiser son potentiel.',
+      bio: 'Étudiant en génie aérospatial',
       image: ju
+    },
+    {
+      id: 5,
+      name: 'Edmondo',
+      specialty: 'Mathématiques & Physique',
+      bio: 'Étudiant en génie aérospatial',
+      image: edmondo
     }
   ];
 

@@ -151,9 +151,12 @@ const Home = () => {
       <section className="consultation-form section">
         <div className="container">
           <div className="form-container">
-            <h2>Demandez votre consultation gratuite</h2>
-            <p>Remplissez le formulaire et nous vous contacterons dans les plus brefs délais</p>
-            <form className="consultation-form-content" onSubmit={handleFormSubmit}>
+            <div className="form-wrapper">
+              <div className="form-header">
+                <h2>Demandez votre consultation gratuite</h2>
+                <p>Remplissez le formulaire et nous vous contacterons dans les plus brefs délais</p>
+              </div>
+              <form className="consultation-form-content" onSubmit={handleFormSubmit}>
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="nom">Nom *</label>
@@ -211,7 +214,8 @@ const Home = () => {
               <button type="submit" className="btn btn-accent">
                 Je réserve ma consultation
               </button>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </section>

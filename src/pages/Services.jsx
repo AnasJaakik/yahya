@@ -14,10 +14,10 @@ const Services = () => {
               <div className="level-section">
                 <h4 className="level-title">1. Secondaire</h4>
                 <p className="level-description">
-                  Nous offrons un accompagnement en mathématiques pour l'ensemble du parcours du secondaire, du début à la fin, avec un soutien adapté au niveau et aux exigences scolaires de chaque élève.
+                  Nous offrons un accompagnement en mathématiques pour l'ensemble du parcours du secondaire, du début à la fin, avec un soutien adapté au niveau et aux exigences scolaires de chaque école.
                 </p>
                 <p className="level-description">
-                  En physique, l'accompagnement est offert pour le niveau de secondaire 5, avec un travail ciblé sur la compréhension des concepts et la résolution de problèmes.
+                  En physique, l'accompagnement est offert pour le secondaire 5, avec un travail ciblé sur la compréhension des concepts préalables aux cours de cégep.
                 </p>
                 <div className="subjects-list">
                   <p className="subjects-label">Matières offertes :</p>
@@ -31,7 +31,7 @@ const Services = () => {
               <div className="level-section">
                 <h4 className="level-title">2. Cégep</h4>
                 <p className="level-description">
-                  Au niveau collégial, Étudium accompagne les étudiants dans les cours fondamentaux de mathématiques, de physique et d'informatique, avec une approche structurée et orientée vers la compréhension.
+                  Au niveau collégial, nous accompagnons les étudiants dans les cours fondamentaux de mathématiques, de physique et d'informatique, avec pour objectif d'atteindre la cote R la plus haute possible.
                 </p>
                 <div className="subjects-details">
                   <div className="subject-detail">
@@ -65,22 +65,35 @@ const Services = () => {
               <h3 className="system-title">II. Système français</h3>
               
               <div className="level-section">
-                <h4 className="level-title">1. Collège</h4>
-                <p className="level-description">
-                  Accompagnement en mathématiques, physique et informatique, adapté au programme français, avec un soutien axé sur la compréhension du cours et la méthodologie.
+              <p className="level-description">
+                  Accompagnement en mathématiques, physique et informatique, par des tuteurs issus du programme français, avec un soutien axé sur la compréhension du cours, la méthodologie et la rédaction. En présentiel ou en distantiel.
                 </p>
+                <h4 className="level-title">1. Collège</h4>
+               
+                <div className="subjects-list">
+                  <p className="subjects-label">Matières offertes :</p>
+                  <ul className="arrow-list">
+                    <li>Mathématiques</li>
+                    <li>Physique</li>
+                    
+                  </ul>
+                </div>
               </div>
 
               <div className="level-section">
                 <h4 className="level-title">2. Lycée</h4>
-                <p className="level-description">
-                  Soutien en mathématiques, physique et informatique, incluant :
-                </p>
-                <ul className="support-list">
-                  <li>aide aux devoirs</li>
-                  <li>approfondissement des notions</li>
-                  <li>préparation aux contrôles et examens</li>
-                </ul>
+               
+                <div className="subjects-details">
+                  
+                  <div className="subject-detail">
+                    <h5>Matières :</h5>
+                    <ul className="arrow-list">
+                      <li>Mathématiques</li>
+                      <li>Physique</li>
+                      <li>Informatique (NSI)</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

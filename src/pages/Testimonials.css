@@ -83,7 +83,7 @@
   transform: scale(1.1);
 }
 
-.testimonial-image-wrapper {
+.testimonial-card-wrapper {
   max-width: 900px;
   width: 100%;
   display: flex;
@@ -93,18 +93,63 @@
   flex: 1;
 }
 
-.testimonial-image {
+.testimonial-card {
+  background: #f8fafc;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   width: 100%;
   max-width: 100%;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  object-fit: contain;
   transition: transform 0.3s ease;
+  text-align: left;
 }
 
-.testimonial-image:hover {
-  transform: scale(1.02);
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-rating {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.testimonial-rating .star {
+  font-size: 1.5rem;
+  color: rgba(5, 74, 145, 0.3);
+}
+
+.testimonial-rating .star.filled {
+  color: #ffd700;
+}
+
+.testimonial-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.testimonial-author {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(5, 74, 145, 0.1);
+}
+
+.testimonial-author h3 {
+  color: var(--blue-dark);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.testimonial-date {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 .carousel-dots {
@@ -220,13 +265,22 @@
     right: 10px;
   }
 
-  .testimonial-image-wrapper {
+  .testimonial-card-wrapper {
     margin: 0 50px;
     width: calc(100% - 100px);
   }
 
-  .testimonial-image {
-    border-radius: 12px;
+  .testimonial-card {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+
+  .testimonial-author h3 {
+    font-size: 1.3rem;
   }
   
   .carousel-dots {
@@ -270,9 +324,17 @@
     right: 5px;
   }
   
-  .testimonial-image-wrapper {
+  .testimonial-card-wrapper {
     margin: 0 45px;
     width: calc(100% - 90px);
+  }
+
+  .testimonial-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
   }
 }
 

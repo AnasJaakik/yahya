@@ -255,6 +255,11 @@
   font-size: 1.2rem;
 }
 
+.subjects-list .arrow-list li::before {
+  content: "→";
+  font-size: 1rem;
+}
+
 .subjects-details {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -295,6 +300,10 @@
   position: absolute;
   left: 0;
   font-weight: bold;
+}
+
+.subject-detail .arrow-list li::before {
+  content: "→";
 }
 
 .support-list {

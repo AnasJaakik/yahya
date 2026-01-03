@@ -1,35 +1,57 @@
 import { useState } from 'react';
-import avis1 from '../assets/avis1.png';
-import avis2 from '../assets/avis2.png';
-import avis3 from '../assets/avis3.png';
-import avis4 from '../assets/avis4.png';
-import avis5 from '../assets/avis5.png';
 import './Testimonials.css';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const reviewImages = [
-    avis1,
-    avis2,
-    avis3,
-    avis4,
-    avis5
+  const testimonials = [
+    {
+      name: 'Francis',
+      date: '15 décembre 2025',
+      text: 'Excellent tuteur! Il a le succès de ses élèves à coeur. Flexible dans ses horaires et ponctuel. Merci!!!',
+      rating: 5
+    },
+    {
+      name: 'Geneviève',
+      date: '21 septembre 2025',
+      text: 'J\'ai rarement rencontré une tutrice aussi patiente. Elle explique bien. Elle a décortiqué tout le cours de physique pour mieux me faire comprendre, elle a pris le temps qu\'il fallait et s\'assure que je comprenne bien, des exercices d\'applications. J\'ai tellement apprécié et je la recommande. Je vous remercie énormément.',
+      rating: 5
+    },
+    {
+      name: 'Ricardo Antonio',
+      date: '16 juin 2025',
+      text: 'Un tuteur exceptionnel que je recommande à 100 % ! Il m\'a énormément aidé à mieux comprendre la matière et à retrouver confiance en moi. Toujours patient, clair dans ses explications et très encourageant, il prend vraiment le temps de s\'assurer qu\'on comprend bien. Merci beaucoup frérot',
+      rating: 5
+    },
+    {
+      name: 'Melissa',
+      date: '28 mai 2025',
+      text: 'Tuteur à l\'écoute, marrant. J\'ai beaucoup progressé. Il rend la matière très intéressante.',
+      rating: 5
+    },
+    {
+      name: 'Raza',
+      date: '17 mai 2025',
+      text: 'Excellent tuteur, maîtrise bien tout ce qu\'il enseigne (math, physique de cégep). Toujours dispo, appelle même pour prendre des nouvelles et est très flexible et professionnel.',
+      rating: 5
+    }
   ];
 
   const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % reviewImages.length);
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + reviewImages.length) % reviewImages.length);
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   const goToTestimonial = (index) => {
     setCurrentIndex(index);
   };
 
-  const averageRating = 5;
+  const currentTestimonial = testimonials[currentIndex];
+
+  const averageRating = 4.8;
 
   return (
     <div className="testimonials-page">
@@ -59,12 +81,21 @@ const Testimonials = () => {
               ‹
             </button>
             
-            <div className="testimonial-image-wrapper">
-              <img 
-                src={reviewImages[currentIndex]} 
-                alt={`Témoignage ${currentIndex + 1}`}
-                className="testimonial-image"
-              />
+            <div className="testimonial-card-wrapper">
+              <div className="testimonial-card">
+                <div className="testimonial-rating">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className={i < currentTestimonial.rating ? 'star filled' : 'star'}>
+                      ★
+                    </span>
+                  ))}
+                </div>
+                <p className="testimonial-text">"{currentTestimonial.text}"</p>
+                <div className="testimonial-author">
+                  <h3>{currentTestimonial.name}</h3>
+                  <p className="testimonial-date">{currentTestimonial.date}</p>
+                </div>
+              </div>
             </div>
 
             <button className="carousel-btn next" onClick={nextTestimonial} aria-label="Suivant">
@@ -73,7 +104,7 @@ const Testimonials = () => {
           </div>
 
           <div className="carousel-dots">
-            {reviewImages.map((_, index) => (
+            {testimonials.map((_, index) => (
               <button
                 key={index}
                 className={`dot ${index === currentIndex ? 'active' : ''}`}
