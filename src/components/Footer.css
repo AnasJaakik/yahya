@@ -1,5 +1,5 @@
 .footer {
-  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-medium) 100%);
+  background: var(--blue-dark);
   color: var(--white);
   padding: 60px 0 20px;
   position: relative;
@@ -21,8 +21,9 @@
 }
 
 .footer-section p {
-  color: var(--blue-very-light);
+  color: var(--white);
   margin-bottom: 1rem;
+  opacity: 0.9;
 }
 
 .footer-section ul {
@@ -31,29 +32,66 @@
 
 .footer-section ul li {
   margin-bottom: 0.75rem;
-  color: var(--blue-very-light);
+  color: var(--white);
+  opacity: 0.9;
 }
 
 .footer-section ul li a {
-  color: var(--blue-very-light);
-  transition: color 0.3s ease;
+  color: var(--white);
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-  color: var(--white);
+  opacity: 1;
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--blue-very-light);
+  color: var(--white);
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 20px;
+  }
+  
   .footer-content {
     grid-template-columns: 1fr;
     gap: 30px;
+    padding: 0 20px;
+  }
+  
+  .footer-section h3,
+  .footer-section h4 {
+    font-size: 1.1rem;
+  }
+  
+  .footer-section p {
+    font-size: 0.95rem;
+  }
+  
+  .footer-section ul li {
+    font-size: 0.95rem;
+  }
+  
+  .btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .footer-bottom {
+    padding-top: 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    gap: 25px;
   }
 }
 

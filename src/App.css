@@ -5,6 +5,7 @@
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
+  width: 100%;
 }
 
 main {
@@ -13,4 +14,17 @@ main {
   z-index: 1;
   background: transparent;
   padding-top: 82px; /* Hauteur du header pour éviter que le contenu soit caché */
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 70px; /* Hauteur réduite du header sur mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-top: 65px; /* Hauteur encore plus réduite sur très petits écrans */
+  }
 }
