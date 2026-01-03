@@ -124,24 +124,24 @@ const Home = () => {
       {/* --- REPLICATED GRID SECTION --- */}
       <section className="benefits section">
         <div className="container">
-          <h2 className="benefits-subtitle">Ce qui attend l'élève dès la première séance</h2>
+          <h2 className="benefits-subtitle">Ce qui attend nos élèves dès la première séance</h2>
           <div className="benefits-grid">
             <div className="benefit-card tall">
               <h3>Nos tuteurs assurent la clarté sur les sujets difficiles</h3>
-              <p>Notre approche encourage les élèves à demander "Pourquoi" avant de demander "Comment", en s'assurant qu'ils comprennent les procédures dans chaque sujet et la raison pour laquelle ces étapes sont utilisées. Cette méthode s'est avérée très efficace et donne de meilleurs résultats.</p>
+              <p>Notre approche encourage les élèves à demander "Pourquoi" avant de demander "Comment", en s'assurant qu'ils comprennent les procédures dans chaque sujet et la raison pour laquelle ces étapes sont utilisées.</p>
               <div className="card-decoration">💡</div>
             </div>
             <div className="benefit-card wide">
-              <h3>Plan éducatif personnalisé pour votre enfant</h3>
-              <p>Obtenez la meilleure aide avec notre approche d'apprentissage personnalisée, notre programme reconnu et notre soutien aux devoirs. Nous nous adapterons aux besoins de votre enfant pour améliorer significativement ses performances académiques.</p>
+              <h3>Un plan d’accompagnement personnalisé</h3>
+              <p>Chaque élève bénéficie d’un suivi adapté à son niveau, à ses objectifs et à son rythme, afin de favoriser une progression réelle et durable.</p>
             </div>
             <div className="benefit-card">
-              <h3>Tutorat individuel dans un environnement bienveillant</h3>
-              <p>Aucune distraction, communication en tête-à-tête avec le tuteur en ligne. Le tutorat permet aux élèves de se concentrer sur l'apprentissage grâce à des exercices interactifs en sciences et informatique.</p>
+              <h3>Disponibles au-delà des&nbsp;séances</h3>
+              <p>Nos tuteurs restent accessibles en dehors des heures de tutorat pour répondre aux questions, clarifier une notion ou orienter l’élève lorsque nécessaire.</p>
             </div>
-            <div className="benefit-card">
-              <h3>Tuteur personnel et plateforme pour les cours</h3>
-              <p>Classes interactives basées sur un programme engageant, sélectionné selon l'âge, les objectifs et les intérêts de votre élève.</p>
+            <div className="benefit-card no-justify">
+              <h3>Un tutorat individuel selon vos horaires</h3>
+              <p>Chaque séance se déroule en tête-à-tête avec le tuteur, en ligne ou en présentiel</p>
               <div className="card-decoration-bottom">✨</div>
             </div>
           </div>

@@ -27,9 +27,9 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Services</h4>
             <ul>
-              <li>Maths Collège & Lycée</li>
+              <li>Maths Secondaire, Cégep et Université</li>
               <li>Physique–Chimie</li>
-              <li>Accompagnement Concours</li>
+              <li>Augmentation de la cote R</li>
               <li>Préparation Bac & Brevet</li>
             </ul>
           </div>
