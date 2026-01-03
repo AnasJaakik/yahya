@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Contact</h4>
             <p>Email: contact@etudium.fr</p>
-            <p>Téléphone: +33 X XX XX XX XX</p>
+            <p>Téléphone: +1 (514) 704-3716</p>
             <Link to="/contact" className="btn btn-accent">Consultation gratuite</Link>
           </div>
         </div>
