@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from "framer-motion";
 import mainImage from '../assets/main.png';
 import './Home.css';
+import { sendEmail, formatFormData } from '../utils/emailService';
 
 const Home = () => {
   const [index, setIndex] = useState(0);
   const [formStatus, setFormStatus] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setFormStatus({ type: '', message: '' });
+
     const formData = new FormData(e.target);
     const data = {
       nom: formData.get('nom'),
@@ -21,8 +25,31 @@ const Home = () => {
       message: formData.get('message')
     };
 
-    try {
-      console.log('Données du formulaire:', data);
+    // Get EmailJS credentials from environment variables
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // Check if credentials are configured
+    if (!serviceId || !templateId || !publicKey || 
+        serviceId === 'your_service_id_here' || 
+        templateId === 'your_template_id_here' || 
+        publicKey === 'your_public_key_here') {
+      setFormStatus({
+        type: 'error',
+        message: 'Configuration EmailJS manquante. Veuillez configurer les identifiants dans le fichier .env'
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Format data for EmailJS template
+    const templateParams = formatFormData(data);
+
+    // Send email
+    const result = await sendEmail(serviceId, templateId, templateParams, publicKey);
+
+    if (result.success) {
       setFormStatus({
         type: 'success',
         message: 'Merci ! Votre demande a été envoyée. Nous vous contacterons dans les plus brefs délais.'
@@ -31,12 +58,16 @@ const Home = () => {
       setTimeout(() => {
         setFormStatus({ type: '', message: '' });
       }, 5000);
-    } catch (error) {
+    } else {
+      console.error('EmailJS Error:', result.error);
+      const errorMessage = result.error?.message || 'Une erreur est survenue lors de l\'envoi.';
       setFormStatus({
         type: 'error',
-        message: 'Une erreur est survenue. Veuillez réessayer ou nous contacter directement.'
+        message: `Erreur: ${errorMessage}. Veuillez réessayer ou nous contacter directement.`
       });
     }
+
+    setIsSubmitting(false);
   };
 
   const phrases = [
@@ -82,9 +113,14 @@ const Home = () => {
               <p className="hero-description">
                 Depuis 2023, Étudium accompagne les élèves dans leur progression scolaire, avec un suivi personnalisé, humain et adapté à chaque parcours.
               </p>
-              <Link to="/contact" className="btn btn-accent">
+              <button 
+                className="btn btn-accent"
+                onClick={() => {
+                  document.getElementById('consultation-form')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Demandez une consultation gratuite
-              </Link>
+              </button>
             </div>
             <div className="hero-image">
               <img src={mainImage} alt="Binôme élève–tuteur" className="hero-main-image" />
@@ -148,7 +184,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="consultation-form section">
+      <section id="consultation-form" className="consultation-form section">
         <div className="container">
           <div className="form-container">
             <div className="form-wrapper">
@@ -211,8 +247,12 @@ const Home = () => {
                   {formStatus.message}
                 </div>
               )}
-              <button type="submit" className="btn btn-accent">
-                Je réserve ma consultation
+              <button 
+                type="submit" 
+                className="btn btn-accent"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Envoi en cours...' : 'Je réserve ma consultation'}
               </button>
               </form>
             </div>

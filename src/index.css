@@ -25,6 +25,11 @@ html {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  zoom: 0.9;
+  -ms-zoom: 0.9;
+  -webkit-zoom: 0.9;
+  -moz-transform: scale(0.9);
+  -moz-transform-origin: top center;
 }
 
 body {

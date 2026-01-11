@@ -41,7 +41,7 @@ const Header = () => {
                 Accueil
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link 
                 to="/a-propos" 
                 className={isActive('/a-propos') ? 'active' : ''}
@@ -49,7 +49,7 @@ const Header = () => {
               >
                 À propos
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link 
                 to="/services" 

@@ -11,6 +11,11 @@
   width: 100%;
   margin: 0;
   padding: 0;
+  zoom: 1.111;
+  -ms-zoom: 1.111;
+  -webkit-zoom: 1.111;
+  -moz-transform: scale(1.111);
+  -moz-transform-origin: top center;
 }
 
 .header .container {

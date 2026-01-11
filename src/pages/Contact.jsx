@@ -1,16 +1,77 @@
+import { useState } from 'react';
 import './Contact.css';
+import { sendEmail, formatFormData } from '../utils/emailService';
 
 const Contact = () => {
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStatus, setFormStatus] = useState({ type: '', message: '' });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Merci pour votre message ! Nous vous contacterons dans les plus brefs délais.');
+    setIsSubmitting(true);
+    setFormStatus({ type: '', message: '' });
+
+    const formData = new FormData(e.target);
+    const data = {
+      nom: formData.get('nom'),
+      prenom: formData.get('prenom'),
+      email: formData.get('email'),
+      telephone: formData.get('telephone'),
+      niveau: formData.get('niveau'),
+      matiere: formData.get('matiere'),
+      message: formData.get('message')
+    };
+
+    // Get EmailJS credentials from environment variables
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // Check if credentials are configured
+    if (!serviceId || !templateId || !publicKey || 
+        serviceId === 'your_service_id_here' || 
+        templateId === 'your_template_id_here' || 
+        publicKey === 'your_public_key_here') {
+      setFormStatus({
+        type: 'error',
+        message: 'Configuration EmailJS manquante. Veuillez configurer les identifiants dans le fichier .env'
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Format data for EmailJS template
+    const templateParams = formatFormData(data);
+
+    // Send email
+    const result = await sendEmail(serviceId, templateId, templateParams, publicKey);
+
+    if (result.success) {
+      setFormStatus({
+        type: 'success',
+        message: 'Merci pour votre message ! Nous vous contacterons dans les plus brefs délais.'
+      });
+      e.target.reset();
+      setTimeout(() => {
+        setFormStatus({ type: '', message: '' });
+      }, 5000);
+    } else {
+      console.error('EmailJS Error:', result.error);
+      const errorMessage = result.error?.message || 'Une erreur est survenue lors de l\'envoi.';
+      setFormStatus({
+        type: 'error',
+        message: `Erreur: ${errorMessage}. Veuillez réessayer ou nous contacter directement.`
+      });
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
     <div className="contact-page">
       <section className="contact-hero section">
         <div className="container">
-          <h1>Contactez-nous</h1>
+          <h1>Contactez-nous!</h1>
           <p className="lead-text">
             Réservez votre consultation gratuite et découvrez comment nous pouvons vous aider
           </p>
@@ -20,6 +81,26 @@ const Contact = () => {
       <section className="contact-content section">
         <div className="container">
           <div className="contact-grid">
+            <div className="contact-info">
+              <div className="info-card">
+                <h3>Coordonnées</h3>
+                <div className="info-item">
+                  <div className="info-icon">📧</div>
+                  <div>
+                    <strong>Email</strong>
+                    <p>info.etudium@gmail.com</p>
+                  </div>
+                </div>
+                <div className="info-item">
+                  <div className="info-icon">📞</div>
+                  <div>
+                    <strong>Téléphone</strong>
+                    <p>+1 (514) 704-3716</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="contact-form-container">
               <h2>Formulaire de contact</h2>
               <form className="contact-form" onSubmit={handleSubmit}>
@@ -77,57 +158,19 @@ const Contact = () => {
                     required
                   ></textarea>
                 </div>
-                <button type="submit" className="btn btn-accent">
-                  Envoyer ma demande
+                {formStatus.message && (
+                  <div className={`form-message ${formStatus.type}`}>
+                    {formStatus.message}
+                  </div>
+                )}
+                <button 
+                  type="submit" 
+                  className="btn btn-accent"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Envoi en cours...' : 'Envoyer ma demande'}
                 </button>
               </form>
-            </div>
-
-            <div className="contact-info">
-              <div className="info-card">
-                <h3>Coordonnées</h3>
-                <div className="info-item">
-                  <div className="info-icon">📧</div>
-                  <div>
-                    <strong>Email</strong>
-                    <p>contact@etudium.fr</p>
-                  </div>
-                </div>
-                <div className="info-item">
-                  <div className="info-icon">📞</div>
-                  <div>
-                    <strong>Téléphone</strong>
-                    <p>+33 X XX XX XX XX</p>
-                  </div>
-                </div>
-                <div className="info-item">
-                  <div className="info-icon">🕒</div>
-                  <div>
-                    <strong>Horaires</strong>
-                    <p>Lun - Ven : 9h - 20h<br />Sam : 10h - 18h</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="info-card">
-                <h3>Pourquoi nous choisir ?</h3>
-                <ul className="benefits-list">
-                  <li>✓ Consultation gratuite</li>
-                  <li>✓ Tuteurs experts sélectionnés</li>
-                  <li>✓ Programme personnalisé</li>
-                  <li>✓ Suivi régulier des progrès</li>
-                  <li>✓ Flexibilité horaire</li>
-                  <li>✓ Cours en ligne ou présentiel</li>
-                </ul>
-              </div>
-
-              <div className="map-container">
-                <h3>Notre localisation</h3>
-                <div className="map-placeholder">
-                  <p>📍 Carte Google Maps</p>
-                  <p className="map-note">Intégrez votre carte Google Maps ici</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

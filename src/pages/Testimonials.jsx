@@ -115,18 +115,6 @@ const Testimonials = () => {
           </div>
         </div>
       </section>
-
-      <section className="leave-review section">
-        <div className="container">
-          <div className="review-box">
-            <h2>Partagez votre expérience</h2>
-            <p>Votre avis nous aide à améliorer nos services</p>
-            <a href="/contact" className="btn btn-accent">
-              Laissez votre avis
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

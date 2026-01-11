@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
-import About from './pages/About';
+// import About from './pages/About'; // Kept for reference but not routed
 import Services from './pages/Services';
 import Team from './pages/Team';
 import Testimonials from './pages/Testimonials';
@@ -20,7 +20,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/a-propos" element={<About />} />
+            {/* <Route path="/a-propos" element={<About />} /> */}
             <Route path="/services" element={<Services />} />
             <Route path="/equipe" element={<Team />} />
             <Route path="/temoignages" element={<Testimonials />} />

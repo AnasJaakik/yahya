@@ -80,23 +80,23 @@ const Team = () => {
           <div className="process-steps">
             <div className="process-step">
               <div className="step-number">1</div>
-              <h3>Expertise académique</h3>
-              <p>Diplômes et compétences vérifiés dans leur domaine</p>
+              <h3>Validation académique</h3>
+              <p>Contrôles des diplômes et des spécialités enseignés</p>
             </div>
             <div className="process-step">
               <div className="step-number">2</div>
-              <h3>Pédagogie testée</h3>
-              <p>Évaluation des capacités d'enseignement et de communication</p>
+              <h3>Évaluation pédagogique structurée</h3>
+              <p>Analyse des capacités d'enseignement via des mises en situation.</p>
             </div>
             <div className="process-step">
               <div className="step-number">3</div>
-              <h3>Passion & Engagement</h3>
-              <p>Motivation et dévouement pour la réussite des élèves</p>
+              <h3>Validation après le premier cours</h3>
+              <p>Période test auprès d'élèves et analyse des retours.</p>
             </div>
             <div className="process-step">
               <div className="step-number">4</div>
-              <h3>Formation continue</h3>
-              <p>Mise à jour régulière des méthodes pédagogiques</p>
+              <h3>Passion et engagement</h3>
+              <p>Revue régulière de la qualité et mise à jour des méthodes.</p>
             </div>
           </div>
         </div>
