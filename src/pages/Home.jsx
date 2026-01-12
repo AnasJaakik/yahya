@@ -30,14 +30,26 @@ const Home = () => {
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+    // Debug: Log environment variables (only in development)
+    if (import.meta.env.DEV) {
+      console.log('EmailJS Config Check:', {
+        serviceId: serviceId ? `${serviceId.substring(0, 10)}...` : 'missing',
+        templateId: templateId ? `${templateId.substring(0, 10)}...` : 'missing',
+        publicKey: publicKey ? `${publicKey.substring(0, 5)}...` : 'missing'
+      });
+    }
+
     // Check if credentials are configured
     if (!serviceId || !templateId || !publicKey || 
         serviceId === 'your_service_id_here' || 
         templateId === 'your_template_id_here' || 
         publicKey === 'your_public_key_here') {
+      const isProduction = import.meta.env.PROD;
       setFormStatus({
         type: 'error',
-        message: 'Configuration EmailJS manquante. Veuillez configurer les identifiants dans le fichier .env'
+        message: isProduction 
+          ? 'Configuration EmailJS manquante. Veuillez configurer les variables d\'environnement sur votre plateforme d\'hébergement (Vercel/Netlify).'
+          : 'Configuration EmailJS manquante. Veuillez configurer les identifiants dans le fichier .env'
       });
       setIsSubmitting(false);
       return;
